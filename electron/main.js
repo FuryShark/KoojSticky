@@ -253,13 +253,19 @@ function setupIPC() {
       const noteDir = path.join(notesDir, noteData.id);
       fs.mkdirSync(noteDir, { recursive: true });
       noteData.updatedAt = new Date().toISOString();
+
+      // Save preview if provided (extract before writing JSON to avoid bloat)
+      let previewDataUrl = null;
+      if (noteData._previewDataUrl) {
+        previewDataUrl = noteData._previewDataUrl;
+        delete noteData._previewDataUrl;
+      }
+
       fs.writeFileSync(path.join(noteDir, 'note.json'), JSON.stringify(noteData, null, 2));
 
-      // Save preview if provided
-      if (noteData._previewDataUrl) {
-        const base64 = noteData._previewDataUrl.replace(/^data:image\/\w+;base64,/, '');
+      if (previewDataUrl) {
+        const base64 = previewDataUrl.replace(/^data:image\/\w+;base64,/, '');
         fs.writeFileSync(path.join(noteDir, 'preview.png'), Buffer.from(base64, 'base64'));
-        delete noteData._previewDataUrl;
       }
       return { success: true };
     } catch (e) { return { success: false, error: e.message }; }
