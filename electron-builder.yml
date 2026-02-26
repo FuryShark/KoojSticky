@@ -1,0 +1,35 @@
+appId: com.koojsticky.app
+productName: KoojSticky
+copyright: Copyright © 2024-2026
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - electron/**/*
+  - dist/**/*
+  - package.json
+
+extraMetadata:
+  main: electron/main.js
+
+asar: true
+npmRebuild: false
+
+win:
+  icon: build/icon.ico
+  signAndEditExecutable: false
+  target:
+    - target: nsis
+      arch:
+        - x64
+
+nsis:
+  oneClick: true
+  perMachine: false
+  allowToChangeInstallationDirectory: false
+  deleteAppDataOnUninstall: false
+  shortcutName: KoojSticky
+  createDesktopShortcut: true
+  createStartMenuShortcut: true

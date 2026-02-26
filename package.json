@@ -1,0 +1,27 @@
+{
+  "name": "koojsticky",
+  "version": "1.0.0",
+  "description": "Desktop sticky-note app with image backgrounds and editable text regions",
+  "main": "electron/main.js",
+  "author": "Nathan",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"wait-on tcp:5173 && electron .\"",
+    "build": "vite build",
+    "start": "electron .",
+    "preview": "vite build && electron .",
+    "dist": "vite build && electron-builder --win"
+  },
+  "dependencies": {
+    "fabric": "^6.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "electron": "^33.2.1",
+    "electron-builder": "^26.8.1",
+    "vite": "^5.4.11",
+    "wait-on": "^8.0.1"
+  }
+}
