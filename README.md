@@ -2,6 +2,22 @@
 
 > **This is an AI-generated test project for a friend. Not intended for public use.**
 
+## Table of Contents
+
+- [What is KoojSticky?](#what-is-koojsticky)
+- [How to Use](#how-to-use)
+  - [Installing](#installing)
+  - [Creating a Note](#creating-a-note)
+  - [Saving, Loading, and Viewing](#saving-loading-and-viewing)
+  - [Profiles (Templates)](#profiles-templates)
+  - [Exporting](#exporting)
+  - [Keyboard Shortcuts](#keyboard-shortcuts)
+- [Developing with Claude Code](#developing-with-claude-code)
+  - [Prerequisites](#prerequisites)
+  - [Steps](#steps)
+  - [Project Structure](#project-structure)
+  - [Data Storage](#data-storage)
+
 ---
 
 ## What is KoojSticky?
