@@ -1,80 +1,71 @@
 # KoojSticky
 
-Desktop sticky-note app for Windows. Create notes with image backgrounds and styled text regions, then pin them to your desktop as always-on-top floating windows.
+> **This is an AI-generated test project for a friend. Not intended for public use.**
+
+---
+
+## What is KoojSticky?
+
+A desktop sticky-note app for Windows 10/11. You create notes with image backgrounds and styled text regions, then pin them to your desktop as always-on-top floating windows.
+
+**Features:**
+- Canvas editor with draggable, resizable text and link regions
+- Background images via drag-and-drop or file picker (PNG, JPG, WebP)
+- Rich text styling: font, size, weight, color, alignment, line height, padding
+- Region styling: background fill, border, corner radius, opacity
+- Link regions with clickable URLs
+- Always-on-top frameless viewer windows (floating sticky notes)
+- Click-through mode so notes don't block apps behind them
+- Opacity control for viewer windows
+- Profile system to save reusable layouts as templates
+- Gallery view with preview thumbnails and search
+- Export to PNG or WebP at 1x/2x/4x scale with optional transparency
+- Undo/redo, layer ordering, keyboard shortcuts
 
 Built with Electron, React, and Fabric.js.
 
-## Install
+---
+
+## How to Use
+
+### Installing
 
 **Download the latest installer from [Releases](https://github.com/FuryShark/KoojSticky/releases).**
 
 1. Download `KoojSticky Setup x.x.x.exe`
 2. Double-click to install (creates Desktop and Start Menu shortcuts)
 3. Launch KoojSticky from the shortcut
-
-To pin to your taskbar: launch the app, right-click its taskbar icon, and select "Pin to taskbar".
+4. To pin to taskbar: right-click the taskbar icon while running and select "Pin to taskbar"
 
 > Windows may show a SmartScreen warning since the app isn't code-signed. Click "More info" then "Run anyway".
-
-## Features
-
-- **Canvas editor** with draggable, resizable text and link regions
-- **Background images** via drag-and-drop or file picker (PNG, JPG, WebP)
-- **Rich text styling** per region: font, size, weight, color, alignment, line height, padding
-- **Region styling**: background fill, border color/width, corner radius, opacity
-- **Link regions** with clickable URLs in viewer mode
-- **Always-on-top viewer** windows (frameless sticky notes on your desktop)
-- **Click-through mode** so notes don't block interaction with apps behind them
-- **Opacity control** for viewer windows
-- **Profile system** to save reusable layouts as templates
-- **Gallery view** with preview thumbnails and search
-- **Export** to PNG or WebP at 1x, 2x, or 4x scale with optional transparency
-- **Undo/redo** history
-- **Layer ordering** in the sidebar
-
-## How to Use
 
 ### Creating a Note
 
 1. Open the app — you start in the **Editor** with a blank canvas
-2. **Import a background image**: drag-and-drop an image onto the canvas, or click the **Import** button in the toolbar
-3. **Add text regions**: select the **Text tool** (T icon) in the toolbar, then click and drag on the canvas to place a text area. Type inside it to add text.
-4. **Add link regions**: select the **Link tool** (chain icon), drag to create the region, then set the URL in the Properties panel on the right
-5. **Style your regions**: click any region to select it, then use the Properties panel to change font, colors, borders, etc.
-6. **Transform the background**: click the background image to move, scale, rotate, or adjust its opacity
+2. **Import a background image**: drag-and-drop an image onto the canvas, or click **Import** in the toolbar
+3. **Add text regions**: select the **Text tool** (T icon), then click and drag on the canvas
+4. **Add link regions**: select the **Link tool** (chain icon), drag to create, then set the URL in the Properties panel
+5. **Style your regions**: click any region, then use the Properties panel on the right
+6. **Transform the background**: click the background image to move, scale, rotate, or adjust opacity
 
-### Saving and Loading
+### Saving, Loading, and Viewing
 
-- Press **Ctrl+S** or click **Save** to save your note
-- Notes appear in the **Gallery** sidebar tab (left panel) and the full **Gallery** view
-- Click any saved note to reload it into the editor
-
-### Viewing as a Sticky Note
-
-1. Click **View** in the toolbar (or the eye icon on a saved note)
-2. A frameless window appears that floats on your desktop
-3. **Hover the top-right** to see controls:
-   - **Pin** — toggle always-on-top
-   - **Ghost** — toggle click-through mode (clicks pass through to apps behind)
-   - **Pencil** — open in editor
-   - **X** — close
-4. **Hover the bottom** to adjust opacity
-5. **Drag anywhere** to reposition
-6. Links in the note are clickable and open in your default browser
+- **Ctrl+S** or click **Save** to save your note
+- Click any saved note in the sidebar Gallery tab to reload it
+- Click **View** to open the note as a floating sticky note on your desktop
+  - Hover top-right for controls: pin, click-through, edit, close
+  - Hover bottom for opacity slider
+  - Drag anywhere to reposition
 
 ### Profiles (Templates)
 
-- **Save Profile**: saves the current layout without text content as a reusable template
+- **Save Profile**: saves the current layout as a reusable template (text stripped by default)
 - **Update Profile**: pushes layout changes back to the linked profile
-- **New Note from Profile**: click any profile in the Gallery to create a fresh note with that layout
-- Profiles support **tags** for organization and can be searched by name or tag
+- Click any profile in the Gallery to create a new note from that layout
 
 ### Exporting
 
-- Press **Ctrl+E** or click **Export** to open the export dialog
-- Choose **PNG** or **WebP** format
-- Select scale: **1x**, **2x**, or **4x**
-- Optionally enable **transparent background**
+- **Ctrl+E** or click **Export** — choose PNG or WebP, 1x/2x/4x scale, optional transparent background
 
 ### Keyboard Shortcuts
 
@@ -87,27 +78,50 @@ To pin to your taskbar: launch the app, right-click its taskbar icon, and select
 | Delete | Delete selected region |
 | Escape | Deselect / close dialogs |
 
-## Development
+---
 
-Requires Node.js 18+ and npm.
+## Developing with Claude Code
 
-```bash
-# Install dependencies
-npm install
+If you want Claude to clone this repo, make changes, and rebuild the installer locally, here's how.
 
-# Run in development mode (hot reload)
-npm run dev
+### Prerequisites
 
-# Build for production (preview)
-npm run preview
+- [Node.js](https://nodejs.org/) 18 or newer installed
+- [Git](https://git-scm.com/) installed
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI installed
 
-# Build Windows installer
-npm run dist
-```
+### Steps
 
-The installer is output to the `release/` folder.
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/FuryShark/KoojSticky.git
+   cd KoojSticky
+   npm install
+   ```
 
-## Project Structure
+2. **Open Claude Code in the project folder:**
+   ```bash
+   claude
+   ```
+
+3. **Ask Claude to make changes.** For example:
+   - "Add a new font option to the text regions"
+   - "Change the default canvas background color to light blue"
+   - "Add a button to duplicate a note"
+
+4. **Test your changes:**
+   ```bash
+   npm run dev
+   ```
+   This launches the app in development mode with hot reload.
+
+5. **Build a new installer when you're happy:**
+   ```bash
+   npm run dist
+   ```
+   The new installer appears in the `release/` folder.
+
+### Project Structure
 
 ```
 electron/
@@ -132,11 +146,10 @@ build/
   icon.png         App icon (PNG)
 ```
 
-## Data Storage
+### Data Storage
 
-User data is stored in:
 - **Development**: `./data/` (project root)
-- **Installed**: `%APPDATA%/kooj-sticky/data/`
+- **Installed app**: `%APPDATA%/kooj-sticky/data/`
 
 ```
 data/
